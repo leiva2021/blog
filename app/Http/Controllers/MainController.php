@@ -18,7 +18,7 @@ class MainController extends Controller
 
     public function index()
     {
-        return view('public.welcome')->with(['categories' => $this->categories]);
+        return view('public.index')->with(['categories' => $this->categories]);
     }
 
     public function about()
