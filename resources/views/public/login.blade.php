@@ -40,7 +40,6 @@
             </div>
         </div>
     </section>
-    @vite(['resources/css/mystyle.scss'])
 
 </body>
 

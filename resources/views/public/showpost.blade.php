@@ -114,6 +114,4 @@
     </div>
 </div>
 
-@vite(['resources/css/mystyle.scss'])
-
 @endsection
