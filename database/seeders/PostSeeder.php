@@ -23,6 +23,8 @@ class PostSeeder extends Seeder
 
         // * php artisan db:seed --class=DatabaseSeeder
         // * mkdir -p public/storage/posts
+        // * php artisan db:seed --class=DatabaseSeeder --force
+
 
         $posts = Post::factory(10)->create();
     }
