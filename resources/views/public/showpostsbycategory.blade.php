@@ -13,6 +13,7 @@
 
 @section('content')
 <div class="container px-4 px-lg-5 mt-5">
+    @if(count($posts)>0)
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
         @foreach($posts as $post)
         <div class="col mb-5">
@@ -40,5 +41,8 @@
         </div>
         @endforeach
     </div>
+    @else
+        <h3 class="text-center">No hay posts asociado a esta categoria!</h3>
+    @endif
 </div>
 @endsection
