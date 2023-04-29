@@ -30,7 +30,7 @@
                             </form>
                             <p>No tiene una cuenta? <a style="text-decoration: none;" href="{{ route('public.create') }}">Registrate</a></p>
                             @if (session()->has('error'))
-                            <div class="alert alert-danger">
+                            <div class="alert alert-danger">                                
                                 {{ session()->get('error') }}
                             </div>
                             @endif
