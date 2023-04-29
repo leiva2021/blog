@@ -1,14 +1,13 @@
-FROM php:8.1-apache
+#!/usr/bin/env bash
+echo "Running composer"
+composer global require hirak/prestissimo
+composer install --no-dev --working-dir=/var/www/html
 
-WORKDIR /var/www/html
+echo "Caching config..."
+php artisan config:cache
 
-COPY . /var/www/html
+echo "Caching routes..."
+php artisan route:cache
 
-RUN apt-get update \
-    && apt-get install -y zip unzip \
-    && docker-php-ext-install pdo_mysql \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
-    && composer install --no-dev \
-    && chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
-
-EXPOSE 80
+echo "Running migrations..."
+php artisan migrate --force
