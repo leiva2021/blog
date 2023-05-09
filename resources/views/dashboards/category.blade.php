@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <!-- Modal Add Category -->
 <div class="modal fade" id="CategoryModal" data-bs-backdrop="static" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
